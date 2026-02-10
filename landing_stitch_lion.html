@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AI 비즈니스 자동화 마스터코스 - 통합 랜딩페이지</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B00",
+              "background-light": "#ffffff",
+              "background-dark": "#0A0A0A",
+              "card-dark": "#161616",
+              "navy-deep": "#0F172A",
+            },
+            fontFamily: {
+              display: ["Pretendard", "sans-serif"],
+              sans: ["Pretendard", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "12px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+        /* Hero Section Styles */
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(26,10,0,0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2832&ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+        }
+        .curtain-effect {
+            background: linear-gradient(to right, 
+                rgba(0,0,0,0.9) 0%, rgba(30,15,5,0.7) 15%, rgba(0,0,0,0.9) 30%, 
+                rgba(30,15,5,0.7) 45%, rgba(0,0,0,0.9) 60%, rgba(30,15,5,0.7) 75%, 
+                rgba(0,0,0,0.9) 90%, rgba(0,0,0,1) 100%);
+        }
+        /* Problem Section Styles */
+        .card-shadow { box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1); }
+        .gradient-bg { background: radial-gradient(circle at top right, rgba(255, 92, 0, 0.05) 0%, transparent 40%); }
+        /* Solution Section Styles */
+        .curtain-bg {
+            background-image: linear-gradient(to right, transparent 0%, rgba(255, 107, 0, 0.05) 50%, transparent 100%),
+                              repeating-linear-gradient(90deg, #1A120B 0px, #1A120B 1px, #0F0A05 1px, #0F0A05 80px);
+        }
+        .dark .curtain-bg {
+             background-image: linear-gradient(to right, transparent 0%, rgba(255, 107, 0, 0.1) 50%, transparent 100%),
+                              repeating-linear-gradient(90deg, #1A120B 0px, #1A120B 1px, #0F0A05 1px, #0F0A05 80px);
+        }
+        /* Curriculum Section Styles */
+        .orange-glow { text-shadow: 0 0 20px rgba(255, 107, 0, 0.4); }
+        .curriculum-card:hover { border-color: #FF6B00; transform: translateY(-4px); }
+        /* Final CTA Styles */
+        .final-hero-gradient {
+            background: radial-gradient(circle at center, rgba(255, 102, 0, 0.15) 0%, rgba(11, 14, 20, 1) 70%);
+        }
+        .stage-curtain {
+            background-image: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.02) 41px, rgba(255,255,255,0.02) 80px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
+
+    <!-- Global Navigation (From Hero Section) -->
+    <nav class="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                    <span class="material-icons text-white text-xl">bolt</span>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white uppercase">AI MASTERCLASS</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-full border border-white/20 transition-all">
+                    얼리버드 신청하기
+                </button>
+                <button class="p-2 text-white/70 hover:text-white transition-colors" id="theme-toggle">
+                    <span class="material-icons" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <main class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="absolute inset-0 curtain-effect mix-blend-multiply opacity-60"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 pt-20 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-10 animate-fade-in">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-white/90 text-sm font-medium tracking-wide">직장인 전용 4주 완성 AI 스터디</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.2] mb-8 tracking-tight">
+                사업계획서 작성, 남들은 AI로<br/>
+                <span class="text-primary">2시간 만에 끝낸다는데</span><br/>
+                나만 며칠째 고민하고 계신가요?
+            </h1>
+            <p class="text-lg md:text-xl text-white/70 font-medium leading-relaxed max-w-3xl mx-auto mb-12">
+                ChatGPT 쓸 줄 아는 것과 업무에 제대로 쓰는 것은 다릅니다.<br class="hidden md:block"/>
+                이제 AI로 <span class="text-white font-bold underline decoration-primary decoration-2 underline-offset-4">기획 업무의 80%를 자동화하세요.</span>
+            </p>
+            <div class="flex flex-col items-center gap-4">
+                <button class="group relative px-10 py-5 bg-primary hover:bg-[#E56000] text-white text-xl font-bold rounded-2xl shadow-[0_20px_50px_rgba(255,107,0,0.3)] transition-all transform hover:-translate-y-1 flex items-center gap-3">
+                    지금 신청하고 3시간 절약하기
+                    <span class="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+                <p class="text-white/50 text-sm">* 1기 20명 선착순 마감 임박</p>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
+            <span class="text-[10px] uppercase tracking-[0.2em] font-bold">Scroll</span>
+            <span class="material-icons text-sm">expand_more</span>
+        </div>
+    </main>
+
+    <!-- Section 2: Problem Awareness -->
+    <div class="relative overflow-hidden bg-background-light dark:bg-background-dark">
+        <div class="absolute top-0 right-0 w-full h-[500px] gradient-bg pointer-events-none"></div>
+        <section class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 mb-4 text-sm font-bold bg-primary/10 text-primary rounded-full uppercase tracking-wider">Pain Points</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white">
+                    🚨 이런 상황, <span class="text-primary">익숙하지 않으신가요?</span>
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    많은 직장인들이 AI 시대를 앞두고 느끼는 현실적인 고민들입니다.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pain Point Card 1 -->
+                <div class="group relative bg-white dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 card-shadow">
+                    <div class="mb-6 w-14 h-14 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
+                        <span class="material-icons-round text-3xl">trending_down</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">"나만 뒤처지는 것 같아요"</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        주변 동료들은 이미 AI를 업무에 활용한다는데, 나는 어디서부터 시작해야 할지 막막합니다.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            AI 툴들이 너무 많아 무엇이 진짜 필요한지 혼란스러움
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            실무 적용 방법을 몰라 매번 구경만 하는 중
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            빠르게 변하는 기술 트렌드에 소외감을 느낌
+                        </li>
+                    </ul>
+                </div>
+                <!-- Pain Point Card 2 -->
+                <div class="group relative bg-white dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 card-shadow">
+                    <div class="mb-6 w-14 h-14 bg-orange-50 dark:bg-orange-900/20 text-primary rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
+                        <span class="material-icons-round text-3xl">schedule</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">"시간은 없고, 완벽해야 하고"</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        쏟아지는 기획안과 보고서 업무 속에서 퀄리티를 챙기려니 매일이 야근의 연속입니다.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            단순 반복적인 문서 작업에 뺏기는 시간이 너무 많음
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            마감 기한은 다가오는데 빈 페이지를 보며 고민만 함
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            생산성 향상이 절실하지만 배울 시간이 부족함
+                        </li>
+                    </ul>
+                </div>
+                <!-- Pain Point Card 3 -->
+                <div class="group relative bg-white dark:bg-slate-800/50 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300 card-shadow">
+                    <div class="mb-6 w-14 h-14 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110">
+                        <span class="material-icons-round text-3xl">sentiment_dissatisfied</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">"ChatGPT 써봤는데 별로더라"</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        막상 써보니 답변은 뻔하고, 실무에 쓰기에는 부족한 내용이라 결국 내가 다시 다 고쳐야 합니다.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            프롬프트 작성이 어려워 원하는 결과가 안 나옴
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            비즈니스 맥락을 이해하지 못하는 인공지능의 답변
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-icons-round text-primary text-sm mt-0.5">check_circle</span>
+                            AI가 만든 가짜 정보(할루시네이션) 검증에 더 큰 시간 소요
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Replacement Quote -->
+            <div class="mt-20 text-center bg-slate-900 dark:bg-slate-800 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-6">
+                        당신의 일자리를 대체하는 것은 AI 자체가 아닙니다.<br/>
+                        대체하는 것은 <span class="text-primary underline underline-offset-8 decoration-4">'AI를 잘 활용하는 사람'</span> 입니다.
+                    </h3>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section 3: Solution & Social Proof -->
+    <section class="relative pt-24 pb-24 overflow-hidden curtain-bg">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">
+                💡 이 강의는 AI 마스터가 아닌<br/> <span class="text-primary">업무 자동화</span>에 집중합니다
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="p-8 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="material-icons text-primary">description</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Prompt System</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">복사해서 바로 쓰는 직무별 프롬프트 템플릿 제공. 클릭 한 번으로 기획 업무를 해결하세요.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="material-icons text-primary">speed</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Efficiency</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">80%의 결과물을 20%의 시간 안에 뽑아내는 법. 압도적인 속도에 집중합니다.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <span class="material-icons text-primary">laptop_mac</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Practicality</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">배우고 끝나는 것이 아닌 즉시 실무 도입. 실제 수강생의 파일로 직접 구현합니다.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Stats -->
+        <div class="max-w-6xl mx-auto px-6 mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-background-light dark:bg-background-dark p-10 rounded-3xl border border-slate-100 dark:border-white/5 text-center shadow-lg">
+                    <div class="text-5xl font-black text-primary mb-2">86%</div>
+                    <p class="text-slate-700 dark:text-slate-300 font-semibold">업무 소요 시간 감소</p>
+                </div>
+                <div class="bg-background-light dark:bg-background-dark p-10 rounded-3xl border border-slate-100 dark:border-white/5 text-center shadow-lg">
+                    <div class="text-5xl font-black text-primary mb-2">92%</div>
+                    <p class="text-slate-700 dark:text-slate-300 font-semibold">지인 추천 및 만족도</p>
+                </div>
+                <div class="bg-background-light dark:bg-background-dark p-10 rounded-3xl border border-slate-100 dark:border-white/5 text-center shadow-lg">
+                    <div class="text-5xl font-black text-primary mb-2">8hrs</div>
+                    <p class="text-slate-700 dark:text-slate-300 font-semibold">주 평균 절약 시간</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Curriculum & Target -->
+    <section class="py-24 bg-slate-50 dark:bg-card-dark/30 border-y border-slate-200 dark:border-white/5" id="curriculum">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight">Curriculum</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Week 1-4 summaries -->
+                <div class="curriculum-card bg-white dark:bg-card-dark border border-slate-200 dark:border-white/10 p-8 rounded-2xl transition-all">
+                    <span class="text-primary text-sm font-black mb-4 block">WEEK 01</span>
+                    <h3 class="text-xl font-bold mb-4">비즈니스 기획과 AI 리서치</h3>
+                    <p class="text-sm text-slate-500">시장 조사 자동화 및 프롬프트 엔지니어링 기초</p>
+                </div>
+                <div class="curriculum-card bg-white dark:bg-card-dark border border-slate-200 dark:border-white/10 p-8 rounded-2xl transition-all">
+                    <span class="text-primary text-sm font-black mb-4 block">WEEK 02</span>
+                    <h3 class="text-xl font-bold mb-4">사업계획서 자동 작성</h3>
+                    <p class="text-sm text-slate-500">ChatGPT 활용 논리적인 기획안 구조 설계</p>
+                </div>
+                <div class="curriculum-card bg-white dark:bg-card-dark border border-slate-200 dark:border-white/10 p-8 rounded-2xl transition-all">
+                    <span class="text-primary text-sm font-black mb-4 block">WEEK 03</span>
+                    <h3 class="text-xl font-bold mb-4">시각화 및 PPT 자동생성</h3>
+                    <p class="text-sm text-slate-500">Gamma/Canva 활용 및 데이터 시각화 자동화</p>
+                </div>
+                <div class="curriculum-card bg-white dark:bg-card-dark border border-slate-200 dark:border-white/10 p-8 rounded-2xl transition-all">
+                    <span class="text-primary text-sm font-black mb-4 block">WEEK 04</span>
+                    <h3 class="text-xl font-bold mb-4">실전 케이스 스터디</h3>
+                    <p class="text-sm text-slate-500">자신의 프로젝트에 AI 이식 및 최종 피드백</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Final CTA -->
+    <main class="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20 overflow-hidden final-hero-gradient">
+        <div class="absolute inset-0 stage-curtain pointer-events-none opacity-30"></div>
+        <div class="relative z-10 max-w-4xl w-full text-center space-y-12">
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary font-bold text-sm animate-pulse mx-auto">
+                <span class="material-icons text-sm mr-2">schedule</span> 마감 임박: 얼리버드 혜택 종료까지
+            </div>
+            <div class="grid grid-cols-4 gap-4 max-w-md mx-auto text-center">
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                    <div class="text-3xl font-black text-white">02</div>
+                    <div class="text-xs text-slate-400 mt-1">Days</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                    <div class="text-3xl font-black text-white">14</div>
+                    <div class="text-xs text-slate-400 mt-1">Hours</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                    <div class="text-3xl font-black text-white">45</div>
+                    <div class="text-xs text-slate-400 mt-1">Mins</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                    <div class="text-3xl font-black text-white">12</div>
+                    <div class="text-xs text-slate-400 mt-1">Secs</div>
+                </div>
+            </div>
+            <div class="bg-slate-900/50 dark:bg-navy-deep border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden group">
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-slate-400 line-through text-xl">정가 490,000원</span>
+                        <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-bounce">41% OFF</span>
+                    </div>
+                    <div class="flex items-baseline gap-2 mb-10">
+                        <span class="text-slate-400 text-2xl font-semibold">얼리버드가</span>
+                        <span class="text-5xl md:text-6xl font-black text-white">290,000</span>
+                        <span class="text-3xl font-bold text-white">원</span>
+                    </div>
+                    <a class="group relative inline-flex items-center justify-center w-full max-w-lg px-8 py-6 text-xl font-extrabold text-white bg-primary rounded-2xl hover:scale-[1.02] active:scale-95 shadow-[0_0_40px_-10px_rgba(255,102,0,0.5)] transition-all" href="#">
+                        지금 신청하고 3시간 절약하기
+                        <span class="material-icons ml-3 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-background-dark py-12 px-6 border-t border-slate-200 dark:border-white/10 text-center">
+        <p class="font-bold text-slate-900 dark:text-white mb-2">플래닝하이 AI 마스터코스</p>
+        <p class="text-slate-500 text-sm">© 2026 PlanningHigh. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.innerText = 'light_mode';
+            } else {
+                html.classList.add('dark');
+                themeIcon.innerText = 'dark_mode';
+            }
+        });
+    </script>
+</body>
+</html>
