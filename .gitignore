@@ -44,3 +44,4 @@ stitch_project_*/
 .env
 temp/
 .temp/
+.codegraph/
