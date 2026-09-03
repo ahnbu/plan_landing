@@ -25,9 +25,9 @@ dist-ssr
 
 # Gemini CLI / bkit
 .gemini/tmp/
-docs/.pdca-snapshots/
-docs/.pdca-status.json
-docs/.bkit-memory.json
+_docs/.pdca-snapshots/
+_docs/.pdca-status.json
+_docs/.bkit-memory.json
 
 # Downloaded Assets
 stitch_project_*/
